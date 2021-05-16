@@ -2,6 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const randomItem = require('../helpers/randomItem');
 
+// added
+const dotenv = require('dotenv');
+dotenv.config();
+
 const dataFolder = path.join(__dirname, '../data');
 const dataFile = process.env.DATA_FILE ? process.env.DATA_FILE : 'Questions.json';
 const dataPath = path.join(dataFolder, dataFile);
