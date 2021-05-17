@@ -34,7 +34,7 @@ pipeline {
             steps {
                 sh 'ssh -o StrictHostKeyChecking=no ubuntu@52.77.189.136 "docker stop web; \
                     docker rm web; \
-                    docker run -p 80:3000 -v /home/ubuntu/one2onetool/:/usr/src/app --name web -d mahikero/cicdproject "'
+                    docker run -p 80:3000 -v /home/ubuntu/one2onetool/:/usr/src/app --name web -d mahikero/cicdproject:$BUILD_NUMBER "'
             }
       
         }
@@ -46,7 +46,7 @@ pipeline {
             steps {
                 sh 'ssh -o StrictHostKeyChecking=no ubuntu@18.140.103.184 "docker stop web; \
                     docker rm web; \
-                    docker run -p 80:3000 -v /home/ubuntu/one2onetool/:/usr/src/app --name web -d mahikero/cicdproject "'
+                    docker run -p 80:3000 -v /home/ubuntu/one2onetool/:/usr/src/app --name web -d mahikero/cicdproject:$BUILD_NUMBER "'
                 
             }
 
