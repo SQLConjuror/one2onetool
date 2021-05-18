@@ -33,6 +33,8 @@ pipeline {
             }
             steps {
                 sh 'ssh -o StrictHostKeyChecking=no ubuntu@54.179.137.71 "docker stop web; \
+		    cd one2onetool; \
+	   	    git pull origin staging; \
                     docker rm web; \
                     docker run -p 80:3000 -v /home/ubuntu/one2onetool/:/usr/src/app --name web -d mahikero/cicdproject:$BUILD_NUMBER "'
             }
@@ -45,6 +47,8 @@ pipeline {
             }
             steps {
                 sh 'ssh -o StrictHostKeyChecking=no ubuntu@13.213.55.73 "docker stop web; \
+		    cd one2onetool; \
+		    git pull origin release; \
                     docker rm web; \
                     docker run -p 80:3000 -v /home/ubuntu/one2onetool/:/usr/src/app --name web -d mahikero/cicdproject:$BUILD_NUMBER "'
                 
