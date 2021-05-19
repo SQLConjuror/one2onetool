@@ -15,3 +15,10 @@ Jenkins will do the following:
 * Push the Apps' Docker image to Dockerhub
 * Deploy the containerized app to staging and production environment.
 
+## Application Staging and Production URLs
+
+### Staging Application URL
+http://54.179.137.71
+
+### Production Application URL
+http://13.213.55.73/
